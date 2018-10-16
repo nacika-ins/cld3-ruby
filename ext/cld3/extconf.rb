@@ -34,7 +34,7 @@ FileUtils.mkdir_p("script_span")
 
 [ "feature_extractor", "sentence", "task_spec" ].each {|name|
   `protoc 'ext/src/#{name}.proto' --cpp_out=.`
-  ln_fallback("#{name}.pb.h", "cld_3/protos/#{name}.pb.h")
+  ln_fallback("ext/src/#{name}.pb.h", "cld_3/protos/#{name}.pb.h")
 }
 
 [
