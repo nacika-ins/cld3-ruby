@@ -56,6 +56,6 @@ FileUtils.mkdir_p("script_span")
 }
 
 $CXXFLAGS += " -fvisibility=hidden -std=c++11"
+$INCFLAGS += ' -I$(srcdir)/ext/src -I$(srcdir)/cld_3/protos/'
 create_makefile("libcld3")
 
-$INCFLAGS += ' -I$(srcdir)/ext/src -I$(srcdir)/cld_3/protos/'
