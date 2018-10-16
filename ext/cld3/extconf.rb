@@ -55,7 +55,7 @@ FileUtils.mkdir_p("script_span")
   ln_fallback("ext/src/script_span/#{name}", "script_span/#{name}")
 }
 
-$CXXFLAGS += " -fvisibility=hidden -std=c++11"
+$CXXFLAGS += " -fvisibility=hidden -std=c++11 -L/usr/local/Cellar/protobuf/3.6.1/lib -lprotobuf -pthread"
 $INCFLAGS += ' -I$(srcdir)/ext/src -I$(srcdir)/cld_3/protos/'
 create_makefile("libcld3")
 
