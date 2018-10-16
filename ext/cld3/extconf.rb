@@ -33,7 +33,7 @@ FileUtils.mkdir_p("cld_3/protos")
 FileUtils.mkdir_p("script_span")
 
 [ "feature_extractor", "sentence", "task_spec" ].each {|name|
-  `protoc 'ext/cld3/ext/src/#{name}.proto' --cpp_out=.`
+  `protoc 'ext/src/#{name}.proto' --cpp_out=.`
   ln_fallback("#{name}.pb.h", "cld_3/protos/#{name}.pb.h")
 }
 
@@ -52,7 +52,7 @@ FileUtils.mkdir_p("script_span")
   "utf8scannot_lettermarkspecial.h",
   "utf8statetable.h"
 ].each {|name|
-  ln_fallback("./ext/cld3/ext/src/script_span/#{name}", "script_span/#{name}")
+  ln_fallback("ext/src/script_span/#{name}", "script_span/#{name}")
 }
 
 $CXXFLAGS += " -fvisibility=hidden -std=c++11"
